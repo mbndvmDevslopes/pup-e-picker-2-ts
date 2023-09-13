@@ -18,18 +18,18 @@ export type ActiveTab =
   | "create-dog-form";
 
 type TDogProvider = {
-  updateDog: (id: number, isFav: boolean) => void;
+  updateDog: (id: number, isFav: boolean) => Promise<Dog>;
   deleteDog: (id: number) => void;
 
   filteredDogs: Dog[];
-  setFilteredDogs: Dispatch<SetStateAction<Dog[]>>;
+
   setIsLoading: Dispatch<SetStateAction<boolean>>;
   isLoading: boolean;
   allDogs: Dog[];
   setAllDogs: Dispatch<SetStateAction<Dog[]>>;
   activeTab: ActiveTab;
   setActiveTab: Dispatch<SetStateAction<ActiveTab>>;
-  createDog: (dog: Omit<Dog, "id">) => void;
+  createDog: (dog: Omit<Dog, "id">) => Promise<Dog>
 };
 const DogContext = createContext<TDogProvider>({} as TDogProvider);
 
@@ -37,7 +37,19 @@ export const DogProvider = ({ children }: { children: ReactNode }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [allDogs, setAllDogs] = useState<Dog[]>([]);
   const [activeTab, setActiveTab] = useState<ActiveTab>("all-dogs");
-  const [filteredDogs, setFilteredDogs] = useState<Dog[]>(allDogs);
+
+  const filteredDogs = allDogs.filter((dog) => {
+    switch (activeTab) {
+      case "all-dogs":
+        return true;
+      case "favorite-dogs":
+        return dog.isFavorite;
+      case "unfavorite-dogs":
+        return !dog.isFavorite;
+      case "create-dog-form":
+        return false;
+    }
+  });
 
   const refetchData = () => {
     setIsLoading(true);
@@ -53,12 +65,41 @@ export const DogProvider = ({ children }: { children: ReactNode }) => {
       .catch((error) => console.log("Error fetching dogs", error));
   }, []);
 
-  const updateDog = (id: number, isFav: boolean) => {
+  /*  const updateDog = (id: number, isFav: boolean) => {
     setIsLoading(true);
     Requests.patchFavoriteForDog(id, isFav).finally(() => {
       refetchData().catch((error) => console.log("Error fetching dogs", error));
       setIsLoading(false);
     });
+  }; */
+
+ /*  const addBookMarkForArticle = (articleId: number) => {
+    setArticles(
+      articles.map((article) =>
+        article.id === articleId ? { ...article, isBookmarked: true } : article
+      )
+    );
+    updateArticle(articleId, { isBookmarked: true }).then((response) => {
+      if (!response.ok) {
+        setArticles(articles);
+      } else return;
+    });
+  }; */
+  const updateDog = (id: number, isFav: boolean) => {
+    console.log(isFav)
+    setAllDogs(
+      allDogs.map((dog) =>
+        dog.id === id ? { ...dog, isFavorite: isFav } : dog
+      )
+    );
+     Requests.patchFavoriteForDog(id, isFav)
+      .then((response:Response) => {
+        
+        if (!response.ok) {
+          setAllDogs(allDogs);
+        } else return;
+      })
+      .catch((error) => console.log("Error updating dog", error));
   };
 
   const deleteDog = (id: number) => {
@@ -76,38 +117,33 @@ export const DogProvider = ({ children }: { children: ReactNode }) => {
 
   const createDog = (dog: Omit<Dog, "id">) => {
     setIsLoading(true);
-    Requests.postDog(dog)
+     Requests.postDog(dog)
       .then(() => {
         toast.success("A dog is created");
-        refetchData().catch((error) =>
-          console.log("Error fetching dogs", error)
-        );
+        refetchData().catch(() => toast.error("Error creating dog"));
       })
       .catch((error) => console.log("Error creating dog", error))
       .finally(() => setIsLoading(false));
   };
-return (
-
-  <DogContext.Provider
-    value={{
-      filteredDogs,
-      setFilteredDogs,
-      activeTab,
-      setActiveTab,
-      allDogs,
-      setAllDogs,
-      updateDog,
-      deleteDog,
-      setIsLoading,
-      isLoading,
-      createDog,
-    }}
-  >
-    {children}
-  </DogContext.Provider>
-)
+  return (
+    <DogContext.Provider
+      value={{
+        filteredDogs,
+        activeTab,
+        setActiveTab,
+        allDogs,
+        setAllDogs,
+        updateDog,
+        deleteDog,
+        setIsLoading,
+        isLoading,
+        createDog,
+      }}
+    >
+      {children}
+    </DogContext.Provider>
+  );
 };
-
 export const useDogContext = () => useContext(DogContext);
 /*import {
   ReactNode,

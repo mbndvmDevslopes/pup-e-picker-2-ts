@@ -30,7 +30,7 @@ const deleteDogRequest = (id: number) => {
   );
 };
 
-const patchFavoriteForDog = (id: number, isFav: boolean)=> {
+const patchFavoriteForDog = (id: number, isFav: boolean):Promise<Dog>=> {
   return fetch(`${baseUrl}/dogs/${id}`, {
     method: 'PATCH',
     body: JSON.stringify({

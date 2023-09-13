@@ -1,5 +1,5 @@
-import { ReactNode , useEffect} from "react";
-import { DogProvider, useDogContext } from '../providers/dog-context';
+import { ReactNode } from "react";
+import {  useDogContext } from '../providers/dog-context';
 import { Dog } from "../types";
 
 export const Section = ({
@@ -16,15 +16,12 @@ export const Section = ({
     setActiveTab,
     activeTab,
     allDogs,
-    setAllDogs,
-    filteredDogs,
-    setFilteredDogs,
   } = useDogContext();
 
   const unFavDogs = allDogs.filter((dog: Dog) => dog.isFavorite === false);
   const favDogs = allDogs.filter((dog: Dog) => dog.isFavorite === true);
 
-  useEffect(() => {
+ /*  useEffect(() => {
     let displayedDogs = allDogs;
     displayedDogs = allDogs.filter((dog) => {
       if (activeTab === "all-dogs") return true;
@@ -33,7 +30,7 @@ export const Section = ({
     });
     
     setFilteredDogs(displayedDogs);
-  }, [activeTab, allDogs, setFilteredDogs]);
+  }, [activeTab, allDogs, setFilteredDogs]); */
   return (
     <section id="main-section">
       <div className="container-header">

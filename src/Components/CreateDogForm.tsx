@@ -32,13 +32,28 @@ export const CreateDogForm = () =>
       >
         <h4>Create a New Dog</h4>
         <label htmlFor="name">Dog Name</label>
-        <input type="text" value={newDog.name} name='name' required onChange={handleChange}/>
+        <input
+          type="text"
+          value={newDog.name}
+          name="name"
+          required
+          onChange={handleChange}
+        />
         <label htmlFor="description">Dog Description</label>
-        <textarea name="description" value={newDog.description} id="" cols={80} rows={10} onChange={handleChange}></textarea>
+        <textarea
+          name="description"
+          value={newDog.description}
+          id=""
+          cols={80}
+          rows={10}
+          onChange={handleChange}
+          required
+        ></textarea>
         <label htmlFor="picture">Select an Image</label>
         <select
-        value={newDog.image}
-        name='image'
+          
+          value={newDog.image}
+          name="image"
           id=""
           onChange={(e) => {
             handleChange;

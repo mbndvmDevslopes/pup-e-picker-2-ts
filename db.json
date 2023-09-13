@@ -1,27 +1,6 @@
 {
   "dogs": [
     {
-      "name": "Rashad",
-      "image": "../public/assets/chihuahua.avif",
-      "description": "Electronic haptic Southeast yellow Slovenia Supervisor quo female",
-      "isFavorite": false,
-      "id": 0
-    },
-    {
-      "name": "Troy",
-      "image": "../public/assets/dalmation.png",
-      "description": "Paradigm Metal Personal base black",
-      "isFavorite": true,
-      "id": 1
-    },
-    {
-      "name": "Princess",
-      "image": "../public/assets/cowardly.png",
-      "description": "katal bus Music hub East SUV Cotton SQL",
-      "isFavorite": false,
-      "id": 2
-    },
-    {
       "name": "Penelope",
       "image": "../public/assets/corgi.png",
       "description": "Diesel West enable cum alliance capability cupiditate Concrete",
@@ -60,28 +39,21 @@
       "name": "Lea",
       "image": "../public/assets/cowardly.png",
       "description": "Volkswagen Corporate Suriname Latin huzzah",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 9
-    },
-    {
-      "name": "Florence",
-      "image": "../public/assets/blue-heeler.png",
-      "description": "Maine coolly Cab Rubber East negative male",
-      "isFavorite": true,
-      "id": 10
     },
     {
       "name": "Arianna",
       "image": "../public/assets/boxer.png",
       "description": "plum Jordan mitre Crew oof",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 11
     },
     {
       "name": "Stacey",
       "image": "../public/assets/corgi.png",
       "description": "yum Northwest Pop Utah deposit Tuna Account between",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 12
     },
     {
@@ -102,7 +74,7 @@
       "name": "Pansy",
       "image": "../public/assets/corgi.png",
       "description": "authorized grow oof orange arch skip coat Auto",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 15
     },
     {
@@ -132,6 +104,34 @@
       "description": "Beauty Minivan hardship Van female Van female",
       "isFavorite": true,
       "id": 19
+    },
+    {
+      "name": "test",
+      "description": "test",
+      "image": "/public/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 20
+    },
+    {
+      "name": "test",
+      "description": "test",
+      "image": "/public/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 21
+    },
+    {
+      "name": "test",
+      "description": "",
+      "image": "/public/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 22
+    },
+    {
+      "name": "test",
+      "description": "",
+      "image": "/public/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 23
     }
   ]
 }

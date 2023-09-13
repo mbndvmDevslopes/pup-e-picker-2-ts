@@ -9,7 +9,7 @@ export const Dogs = () =>
 
   {
     const { filteredDogs, deleteDog, updateDog, isLoading } = useDogContext();
-console.log(filteredDogs)
+
     return (
       //  the "<> </>"" are called react fragments, it's like adding all the html inside
       // without adding an actual html element
