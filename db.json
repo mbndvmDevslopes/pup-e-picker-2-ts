@@ -1,128 +1,135 @@
 {
   "dogs": [
     {
-      "name": "Jonatan",
-      "image": "/src/assets/boxer.png",
-      "description": "Shoes after Dollar Marketing female generating Diesel",
-      "isFavorite": true,
+      "name": "Rashad",
+      "image": "../public/assets/chihuahua.avif",
+      "description": "Electronic haptic Southeast yellow Slovenia Supervisor quo female",
+      "isFavorite": false,
       "id": 0
     },
     {
-      "name": "Anthony",
-      "image": "/src/assets/cowardly.png",
-      "description": "plum Savings female Ghana programming solutions miniaturise",
+      "name": "Troy",
+      "image": "../public/assets/dalmation.png",
+      "description": "Paradigm Metal Personal base black",
       "isFavorite": true,
       "id": 1
     },
     {
-      "name": "Ana",
-      "image": "/src/assets/boxer.png",
-      "description": "Analyst function withdrawal United while",
+      "name": "Princess",
+      "image": "../public/assets/cowardly.png",
+      "description": "katal bus Music hub East SUV Cotton SQL",
       "isFavorite": false,
+      "id": 2
+    },
+    {
+      "name": "Penelope",
+      "image": "../public/assets/corgi.png",
+      "description": "Diesel West enable cum alliance capability cupiditate Concrete",
+      "isFavorite": false,
+      "id": 3
+    },
+    {
+      "name": "Jaqueline",
+      "image": "../public/assets/dalmation.png",
+      "description": "Kansas Cuban Cayman Executive connecting Luxurious Woman neutral",
+      "isFavorite": true,
       "id": 4
     },
     {
-      "name": "Alfred",
-      "image": "/src/assets/cowardly.png",
-      "description": "Northwest DRAM henry applications South",
+      "name": "Rashawn",
+      "image": "../public/assets/corgi.png",
+      "description": "tan Grocery Loan whenever comprehend Principal odio invoice",
       "isFavorite": false,
-      "id": 5
-    },
-    {
-      "name": "Violette",
-      "image": "/src/assets/boxer.png",
-      "description": "embrace Web Southwest perspiciatis though",
-      "isFavorite": true,
       "id": 6
     },
     {
-      "name": "Kenton",
-      "image": "/src/assets/cowardly.png",
-      "description": "Bedfordshire Human tempora Managed Electronic Directives Nissan expedite",
-      "isFavorite": true,
+      "name": "Piper",
+      "image": "../public/assets/chihuahua.avif",
+      "description": "Branding olive rowdy pennant Bespoke male tan kookily",
+      "isFavorite": false,
       "id": 7
     },
     {
-      "name": "Asa",
-      "image": "/src/assets/dalmation.png",
-      "description": "Minivan Neither Road Movies radian",
+      "name": "Athena",
+      "image": "../public/assets/corgi.png",
+      "description": "portals Elegant generate Borders Funk Gloves sunt",
       "isFavorite": false,
       "id": 8
     },
     {
-      "name": "Nicolas",
-      "image": "/src/assets/chihuahua.avif",
-      "description": "an Savings brink transmit card",
-      "isFavorite": false,
+      "name": "Lea",
+      "image": "../public/assets/cowardly.png",
+      "description": "Volkswagen Corporate Suriname Latin huzzah",
+      "isFavorite": true,
       "id": 9
     },
     {
-      "name": "Elton",
-      "image": "/src/assets/blue-heeler.png",
-      "description": "Nihonium Electronic Nissan Metal because Computer white",
-      "isFavorite": false,
+      "name": "Florence",
+      "image": "../public/assets/blue-heeler.png",
+      "description": "Maine coolly Cab Rubber East negative male",
+      "isFavorite": true,
       "id": 10
     },
     {
-      "name": "Dewayne",
-      "image": "/src/assets/dalmation.png",
-      "description": "Security override firewall Southeast apropos Usability orchid barrel",
-      "isFavorite": false,
+      "name": "Arianna",
+      "image": "../public/assets/boxer.png",
+      "description": "plum Jordan mitre Crew oof",
+      "isFavorite": true,
       "id": 11
     },
     {
-      "name": "Art",
-      "image": "/src/assets/blue-heeler.png",
-      "description": "Global ha Genderflux payment Metal pixel Money",
+      "name": "Stacey",
+      "image": "../public/assets/corgi.png",
+      "description": "yum Northwest Pop Utah deposit Tuna Account between",
       "isFavorite": true,
       "id": 12
     },
     {
-      "name": "Sebastian",
-      "image": "/src/assets/boxer.png",
-      "description": "Associate Gasoline Savings Hybrid Developer",
-      "isFavorite": true,
+      "name": "Joanne",
+      "image": "../public/assets/chihuahua.avif",
+      "description": "Avon Virginia success deposit Trigender Coupe Northeast Northeast",
+      "isFavorite": false,
       "id": 13
     },
     {
-      "name": "Lambert",
-      "image": "/src/assets/chihuahua.avif",
-      "description": "drive reek Marvin compress executive Coordinator Track bluetooth",
+      "name": "Mary",
+      "image": "../public/assets/cowardly.png",
+      "description": "Cotton amongst West Roentgenium Kids",
       "isFavorite": false,
       "id": 14
     },
     {
-      "name": "Kris",
-      "image": "/src/assets/blue-heeler.png",
-      "description": "Beryllium Chevrolet partnerships focus Southeast Poland salmon",
+      "name": "Pansy",
+      "image": "../public/assets/corgi.png",
+      "description": "authorized grow oof orange arch skip coat Auto",
       "isFavorite": true,
       "id": 15
     },
     {
-      "name": "Trudie",
-      "image": "/src/assets/boxer.png",
-      "description": "connecting blue National Movies Interactions ack Tandem Shirt",
-      "isFavorite": false,
+      "name": "Will",
+      "image": "../public/assets/corgi.png",
+      "description": "UTF8 Guinea Southwest quota patio",
+      "isFavorite": true,
       "id": 16
     },
     {
-      "name": "Meaghan",
-      "image": "/src/assets/dalmation.png",
-      "description": "lux Manager North applications Rufiyaa",
+      "name": "Spencer",
+      "image": "../public/assets/cowardly.png",
+      "description": "huzzah Minivan Money International ASCII",
       "isFavorite": false,
       "id": 17
     },
     {
-      "name": "Vallie",
-      "image": "/src/assets/chihuahua.avif",
-      "description": "Lead synergistic noisy operating Passenger female Salad Rubber",
+      "name": "Alize",
+      "image": "../public/assets/corgi.png",
+      "description": "indigo Oklahoma telecast Rubber ick anenst lime",
       "isFavorite": true,
       "id": 18
     },
     {
-      "name": "Newton",
-      "image": "/src/assets/blue-heeler.png",
-      "description": "Planner maxime invoice ROI granular ouch Franc",
+      "name": "Lourdes",
+      "image": "../public/assets/cowardly.png",
+      "description": "Beauty Minivan hardship Van female Van female",
       "isFavorite": true,
       "id": 19
     }

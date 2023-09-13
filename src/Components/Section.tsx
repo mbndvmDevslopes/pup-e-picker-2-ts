@@ -31,7 +31,7 @@ export const Section = ({
       if (activeTab === "favorite-dogs") return dog.isFavorite;
       if (activeTab === "unfavorite-dogs") return !dog.isFavorite;
     });
-    console.log("loading")
+    
     setFilteredDogs(displayedDogs);
   }, [activeTab, allDogs, setFilteredDogs]);
   return (
@@ -39,7 +39,6 @@ export const Section = ({
       <div className="container-header">
         <div className="container-label">{label}</div>
         <div className="selectors">
-          {favDogs.length}
           <div
             className={
               activeTab === 'favorite-dogs' ? 'selector active' : 'selector'
@@ -50,10 +49,10 @@ export const Section = ({
                 : setActiveTab('favorite-dogs');
             }}
           >
-            favorited ( {0} )
+            favorited ( {favDogs.length })
           </div>
 
-          {unFavDogs.length}
+          
           <div
             className={
               activeTab === 'unfavorite-dogs' ? 'selector active' : 'selector'
@@ -64,7 +63,7 @@ export const Section = ({
                 : setActiveTab('unfavorite-dogs');
             }}
           >
-            unfavorited ( {10} )
+            unfavorited ( {unFavDogs.length})
           </div>
           <div
             className={
