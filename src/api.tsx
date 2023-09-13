@@ -1,16 +1,51 @@
-const getAllDogs = () => {
+import { Dog } from './types';
+
+export const baseUrl = 'http://localhost:3000';
+
+const getAllDogs = (): Promise<Dog[]> =>
+  fetch(`${baseUrl}/dogs`).then((response) => {
+    return response.json() as Promise<Dog[]>;
+  });
+
+/* getAllDogs = () => {
   // fill out method
+}; */
+
+const postDog = (dog: Omit<Dog, 'id'>) => {
+  return fetch(`${baseUrl}/dogs`, {
+    method: 'POST',
+    body: JSON.stringify(dog),
+    headers: {
+      'Content-type': 'application/json',
+    },
+  }).then((response) => {
+    return response.json();
+  });
+};
+const deleteDogRequest = (id: number) => {
+  return fetch(`${baseUrl}/dogs/${id}`, { method: 'DELETE' }).then(
+    (response) => {
+      return response.text();
+    }
+  );
 };
 
-const postDog = () => {
-  // fill out method
-};
-const deleteDogRequest = () => {
-  // fill out method
-};
-
-const patchFavoriteForDog = () => {
-  // fill out method
+const patchFavoriteForDog = (id: number, isFav: boolean): Promise<Dog> => {
+  return fetch(`${baseUrl}/dogs/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify({
+      isFavorite: isFav,
+    }),
+    headers: {
+      'Content-type': 'application/json',
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((updatedDog: Dog) => {
+      return updatedDog;
+    });
 };
 
 export const Requests = {

@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { DogProvider, useDogContext } from '../providers/dog-context';
 
 export const Section = ({
   label,
@@ -8,6 +9,16 @@ export const Section = ({
   label: string;
   children: ReactNode;
 }) => {
+  const {
+    updateDog,
+    deleteDog,
+    setActiveTab,
+    activeTab,
+    allDogs,
+    setAllDogs,
+    filteredDogs,
+    setFilteredDogs,
+  } = useDogContext();
   return (
     <section id="main-section">
       <div className="container-header">
@@ -15,9 +26,13 @@ export const Section = ({
         <div className="selectors">
           {/* This should display the favorited count */}
           <div
-            className={`selector ${"active"}`}
+            className={
+              activeTab === 'favorite-dogs' ? 'selector active' : 'selector'
+            }
             onClick={() => {
-              alert("click favorited");
+              activeTab === 'favorite-dogs'
+                ? setActiveTab('all-dogs')
+                : setActiveTab('favorite-dogs');
             }}
           >
             favorited ( {0} )
@@ -25,17 +40,25 @@ export const Section = ({
 
           {/* This should display the unfavorited count */}
           <div
-            className={`selector ${""}`}
+            className={
+              activeTab === 'unfavorite-dogs' ? 'selector active' : 'selector'
+            }
             onClick={() => {
-              alert("click unfavorited");
+              activeTab === 'unfavorite-dogs'
+                ? setActiveTab('all-dogs')
+                : setActiveTab('unfavorite-dogs');
             }}
           >
             unfavorited ( {10} )
           </div>
           <div
-            className={`selector ${""}`}
+            className={
+              activeTab === 'create-dog-form' ? 'selector active' : 'selector'
+            }
             onClick={() => {
-              alert("clicked create dog");
+              activeTab === 'create-dog-form'
+                ? setActiveTab('all-dogs')
+                : setActiveTab('create-dog-form');
             }}
           >
             create dog
