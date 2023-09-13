@@ -9,25 +9,25 @@ export const Dogs = () =>
 
   {
     const { filteredDogs, deleteDog, updateDog, isLoading } = useDogContext();
-
+console.log(filteredDogs)
     return (
       //  the "<> </>"" are called react fragments, it's like adding all the html inside
       // without adding an actual html element
       <>
-        {filteredDogs.map((doggie: Dog) => (
+        {filteredDogs.map((doggie) => (
           <DogCard
-            dog={{ ...doggie }}
+            dog={{ ...doggie}}
             key={doggie.id}
             onTrashIconClick={() => {
               deleteDog(doggie.id);
             }}
             onHeartClick={() => {
-              updateDog(doggie.id, false);
+              updateDog(doggie.id, false)
               //update isFavorite to false
             }}
             onEmptyHeartClick={() => {
               //updateisFavorite to true
-              updateDog(doggie.id, true);
+              updateDog(doggie.id, true)
             }}
             isLoading={isLoading}
           />

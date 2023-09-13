@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode , useEffect} from "react";
 import { DogProvider, useDogContext } from '../providers/dog-context';
+import { Dog } from "../types";
 
 export const Section = ({
   label,
@@ -10,8 +11,8 @@ export const Section = ({
   children: ReactNode;
 }) => {
   const {
-    updateDog,
-    deleteDog,
+    
+    
     setActiveTab,
     activeTab,
     allDogs,
@@ -19,12 +20,26 @@ export const Section = ({
     filteredDogs,
     setFilteredDogs,
   } = useDogContext();
+
+  const unFavDogs = allDogs.filter((dog: Dog) => dog.isFavorite === false);
+  const favDogs = allDogs.filter((dog: Dog) => dog.isFavorite === true);
+
+  useEffect(() => {
+    let displayedDogs = allDogs;
+    displayedDogs = allDogs.filter((dog) => {
+      if (activeTab === "all-dogs") return true;
+      if (activeTab === "favorite-dogs") return dog.isFavorite;
+      if (activeTab === "unfavorite-dogs") return !dog.isFavorite;
+    });
+    console.log("loading")
+    setFilteredDogs(displayedDogs);
+  }, [activeTab, allDogs, setFilteredDogs]);
   return (
     <section id="main-section">
       <div className="container-header">
         <div className="container-label">{label}</div>
         <div className="selectors">
-          {/* This should display the favorited count */}
+          {favDogs.length}
           <div
             className={
               activeTab === 'favorite-dogs' ? 'selector active' : 'selector'
@@ -38,7 +53,7 @@ export const Section = ({
             favorited ( {0} )
           </div>
 
-          {/* This should display the unfavorited count */}
+          {unFavDogs.length}
           <div
             className={
               activeTab === 'unfavorite-dogs' ? 'selector active' : 'selector'

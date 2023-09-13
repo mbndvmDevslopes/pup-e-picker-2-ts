@@ -2,7 +2,7 @@ import { Dog } from './types';
 
 export const baseUrl = 'http://localhost:3000';
 
-const getAllDogs = (): Promise<Dog[]> =>
+const getAllDogs = ()=>
   fetch(`${baseUrl}/dogs`).then((response) => {
     return response.json() as Promise<Dog[]>;
   });
@@ -30,7 +30,7 @@ const deleteDogRequest = (id: number) => {
   );
 };
 
-const patchFavoriteForDog = (id: number, isFav: boolean): Promise<Dog> => {
+const patchFavoriteForDog = (id: number, isFav: boolean)=> {
   return fetch(`${baseUrl}/dogs/${id}`, {
     method: 'PATCH',
     body: JSON.stringify({
