@@ -29,7 +29,7 @@ type TDogProvider = {
   setAllDogs: Dispatch<SetStateAction<Dog[]>>;
   activeTab: ActiveTab;
   setActiveTab: Dispatch<SetStateAction<ActiveTab>>;
-  createDog: (dog: Omit<Dog, "id">) => void
+  createDog: (dog: Omit<Dog, "id">) => void;
 };
 const DogContext = createContext<TDogProvider>({} as TDogProvider);
 
@@ -53,11 +53,13 @@ export const DogProvider = ({ children }: { children: ReactNode }) => {
 
   const refetchData = () => {
     setIsLoading(true);
-    return Requests.getAllDogs()
-      /* .then((dogs) => setAllDogs(dogs)) */
-      .then(setAllDogs)
-      .finally(() => setIsLoading(false))
-      .catch((error) => console.log("Error fetching dogs", error));
+    return (
+      Requests.getAllDogs()
+        /* .then((dogs) => setAllDogs(dogs)) */
+        .then(setAllDogs)
+        .finally(() => setIsLoading(false))
+        .catch((error) => console.log("Error fetching dogs", error))
+    );
   };
 
   /* useEffect(() => {
@@ -77,7 +79,7 @@ export const DogProvider = ({ children }: { children: ReactNode }) => {
     });
   }; */
 
- /*  const addBookMarkForArticle = (articleId: number) => {
+  /*  const addBookMarkForArticle = (articleId: number) => {
     setArticles(
       articles.map((article) =>
         article.id === articleId ? { ...article, isBookmarked: true } : article
@@ -90,15 +92,14 @@ export const DogProvider = ({ children }: { children: ReactNode }) => {
     });
   }; */
   const updateDog = (id: number, isFav: boolean) => {
-    console.log(isFav)
+    console.log(isFav);
     setAllDogs(
       allDogs.map((dog) =>
         dog.id === id ? { ...dog, isFavorite: isFav } : dog
       )
     );
-      Requests.patchFavoriteForDog(id, isFav)
-      .then((response:Response) => {
-        
+    Requests.patchFavoriteForDog(id, isFav)
+      .then((response: Response) => {
         if (!response.ok) {
           setAllDogs(allDogs);
         } else return;
@@ -107,28 +108,51 @@ export const DogProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const deleteDog = (id: number) => {
-    setIsLoading(true);
-
+    setAllDogs(allDogs.filter((dog) => dog.id !== id));
+    console.log(allDogs);
     Requests.deleteDogRequest(id)
+      .then((response: Response) => {
+        if (!response.ok) {
+          setAllDogs(allDogs);
+        } else return;
+      })
       .then(() => refetchData())
       .catch((error) => {
         console.log("Error deleting dog", error);
-      })
-      .finally(() => {
-        setIsLoading(false);
       });
   };
-
-  const createDog = (dog: Omit<Dog, "id">) => {
+  /* const createDog = (dog: Omit<Dog, "id">) => {
     setIsLoading(true);
-     Requests.postDog(dog)
+    Requests.postDog(dog)
       .then(() => {
         toast.success("A dog is created");
         refetchData().catch(() => toast.error("Error creating dog"));
       })
       .catch((error) => console.log("Error creating dog", error))
       .finally(() => setIsLoading(false));
+  }; */
+  const createDog = (dog: Omit<Dog, "id">) => {
+    // Optimistically add the new dog to the allDogs list
+    const updatedAllDogs = [...allDogs, { ...dog, id: Date.now() }];
+    setAllDogs(updatedAllDogs);
+  
+    setIsLoading(true);
+    
+    Requests.postDog(dog)
+      .then(() => {
+        toast.success("A dog is created");
+      })
+      .catch((error) => {
+        // Revert the change if there's an error
+        setAllDogs(allDogs);
+        toast.error("Error creating dog");
+        console.log("Error creating dog", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
+  
   return (
     <DogContext.Provider
       value={{

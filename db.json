@@ -8,41 +8,6 @@
       "id": 4
     },
     {
-      "name": "Rashawn",
-      "image": "../public/assets/corgi.png",
-      "description": "tan Grocery Loan whenever comprehend Principal odio invoice",
-      "isFavorite": false,
-      "id": 6
-    },
-    {
-      "name": "Lea",
-      "image": "../public/assets/cowardly.png",
-      "description": "Volkswagen Corporate Suriname Latin huzzah",
-      "isFavorite": false,
-      "id": 9
-    },
-    {
-      "name": "Arianna",
-      "image": "../public/assets/boxer.png",
-      "description": "plum Jordan mitre Crew oof",
-      "isFavorite": true,
-      "id": 11
-    },
-    {
-      "name": "Stacey",
-      "image": "../public/assets/corgi.png",
-      "description": "yum Northwest Pop Utah deposit Tuna Account between",
-      "isFavorite": true,
-      "id": 12
-    },
-    {
-      "name": "Joanne",
-      "image": "../public/assets/chihuahua.avif",
-      "description": "Avon Virginia success deposit Trigender Coupe Northeast Northeast",
-      "isFavorite": true,
-      "id": 13
-    },
-    {
       "name": "Mary",
       "image": "../public/assets/cowardly.png",
       "description": "Cotton amongst West Roentgenium Kids",
@@ -57,31 +22,17 @@
       "id": 15
     },
     {
-      "name": "Will",
-      "image": "../public/assets/corgi.png",
-      "description": "UTF8 Guinea Southwest quota patio",
-      "isFavorite": false,
-      "id": 16
-    },
-    {
-      "name": "Spencer",
-      "image": "../public/assets/cowardly.png",
-      "description": "huzzah Minivan Money International ASCII",
-      "isFavorite": false,
-      "id": 17
-    },
-    {
       "name": "Alize",
       "image": "../public/assets/corgi.png",
       "description": "indigo Oklahoma telecast Rubber ick anenst lime",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 18
     },
     {
       "name": "Lourdes",
       "image": "../public/assets/cowardly.png",
       "description": "Beauty Minivan hardship Van female Van female",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 19
     },
     {
@@ -102,15 +53,36 @@
       "name": "test",
       "description": "",
       "image": "/public/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 22
     },
     {
       "name": "test",
       "description": "",
       "image": "/public/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 23
+    },
+    {
+      "name": "blue tick dog",
+      "description": "always has ticks",
+      "image": "/public/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 24
+    },
+    {
+      "name": "td",
+      "description": "ted",
+      "image": "/public/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 25
+    },
+    {
+      "name": "big dog",
+      "description": "he is a chihuahua",
+      "image": "/public/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 26
     }
   ]
 }

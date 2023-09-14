@@ -24,11 +24,7 @@ const postDog = (dog: Omit<Dog, 'id'>) => {
   });
 };
 const deleteDogRequest = (id: number) => {
-  return fetch(`${baseUrl}/dogs/${id}`, { method: 'DELETE' }).then(
-    (response) => {
-      return response.text();
-    }
-  );
+  return fetch(`${baseUrl}/dogs/${id}`, { method: 'DELETE' })
 };
 
 const patchFavoriteForDog = (id: number, isFav: boolean )=> {
