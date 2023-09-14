@@ -4,10 +4,11 @@ export const baseUrl = 'http://localhost:3000';
 
 const getAllDogs = ()=>
   fetch(`${baseUrl}/dogs`).then((response) => {
-    return response.json() as Promise<Dog[]>;
+    return response.json() ;
   });
 
-/* getAllDogs = () => {
+/* getAllDogs = () => {fetch("http://localhost:3000/articles")
+      .then((response) => response.json())
   // fill out method
 }; */
 
@@ -30,7 +31,7 @@ const deleteDogRequest = (id: number) => {
   );
 };
 
-const patchFavoriteForDog = (id: number, isFav: boolean):Promise<Dog>=> {
+const patchFavoriteForDog = (id: number, isFav: boolean )=> {
   return fetch(`${baseUrl}/dogs/${id}`, {
     method: 'PATCH',
     body: JSON.stringify({
@@ -39,14 +40,15 @@ const patchFavoriteForDog = (id: number, isFav: boolean):Promise<Dog>=> {
     headers: {
       'Content-type': 'application/json',
     },
-  })
-    .then((response) => {
+    
+  })}
+   /*  .then((response) => {
       return response.json();
     })
     .then((updatedDog: Dog) => {
       return updatedDog;
     });
-};
+}; */
 
 export const Requests = {
   postDog,

@@ -1,13 +1,6 @@
 {
   "dogs": [
     {
-      "name": "Penelope",
-      "image": "../public/assets/corgi.png",
-      "description": "Diesel West enable cum alliance capability cupiditate Concrete",
-      "isFavorite": false,
-      "id": 3
-    },
-    {
       "name": "Jaqueline",
       "image": "../public/assets/dalmation.png",
       "description": "Kansas Cuban Cayman Executive connecting Luxurious Woman neutral",
@@ -22,20 +15,6 @@
       "id": 6
     },
     {
-      "name": "Piper",
-      "image": "../public/assets/chihuahua.avif",
-      "description": "Branding olive rowdy pennant Bespoke male tan kookily",
-      "isFavorite": false,
-      "id": 7
-    },
-    {
-      "name": "Athena",
-      "image": "../public/assets/corgi.png",
-      "description": "portals Elegant generate Borders Funk Gloves sunt",
-      "isFavorite": false,
-      "id": 8
-    },
-    {
       "name": "Lea",
       "image": "../public/assets/cowardly.png",
       "description": "Volkswagen Corporate Suriname Latin huzzah",
@@ -46,21 +25,21 @@
       "name": "Arianna",
       "image": "../public/assets/boxer.png",
       "description": "plum Jordan mitre Crew oof",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 11
     },
     {
       "name": "Stacey",
       "image": "../public/assets/corgi.png",
       "description": "yum Northwest Pop Utah deposit Tuna Account between",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 12
     },
     {
       "name": "Joanne",
       "image": "../public/assets/chihuahua.avif",
       "description": "Avon Virginia success deposit Trigender Coupe Northeast Northeast",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 13
     },
     {
@@ -81,7 +60,7 @@
       "name": "Will",
       "image": "../public/assets/corgi.png",
       "description": "UTF8 Guinea Southwest quota patio",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 16
     },
     {
@@ -95,7 +74,7 @@
       "name": "Alize",
       "image": "../public/assets/corgi.png",
       "description": "indigo Oklahoma telecast Rubber ick anenst lime",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 18
     },
     {

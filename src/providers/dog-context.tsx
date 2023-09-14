@@ -18,7 +18,7 @@ export type ActiveTab =
   | "create-dog-form";
 
 type TDogProvider = {
-  updateDog: (id: number, isFav: boolean) => Promise<Dog>;
+  updateDog: (id: number, isFav: boolean) => void;
   deleteDog: (id: number) => void;
 
   filteredDogs: Dog[];
@@ -29,7 +29,7 @@ type TDogProvider = {
   setAllDogs: Dispatch<SetStateAction<Dog[]>>;
   activeTab: ActiveTab;
   setActiveTab: Dispatch<SetStateAction<ActiveTab>>;
-  createDog: (dog: Omit<Dog, "id">) => Promise<Dog>
+  createDog: (dog: Omit<Dog, "id">) => void
 };
 const DogContext = createContext<TDogProvider>({} as TDogProvider);
 
@@ -54,17 +54,21 @@ export const DogProvider = ({ children }: { children: ReactNode }) => {
   const refetchData = () => {
     setIsLoading(true);
     return Requests.getAllDogs()
-      .then((dogs) => setAllDogs(dogs))
+      /* .then((dogs) => setAllDogs(dogs)) */
+      .then(setAllDogs)
       .finally(() => setIsLoading(false))
       .catch((error) => console.log("Error fetching dogs", error));
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     Requests.getAllDogs()
       .then((dogs) => setAllDogs(dogs))
       .catch((error) => console.log("Error fetching dogs", error));
   }, []);
-
+ */
+  useEffect(() => {
+    refetchData().catch((error) => console.log("Error fetching dogs", error));
+  }, []);
   /*  const updateDog = (id: number, isFav: boolean) => {
     setIsLoading(true);
     Requests.patchFavoriteForDog(id, isFav).finally(() => {
@@ -92,7 +96,7 @@ export const DogProvider = ({ children }: { children: ReactNode }) => {
         dog.id === id ? { ...dog, isFavorite: isFav } : dog
       )
     );
-     Requests.patchFavoriteForDog(id, isFav)
+      Requests.patchFavoriteForDog(id, isFav)
       .then((response:Response) => {
         
         if (!response.ok) {
