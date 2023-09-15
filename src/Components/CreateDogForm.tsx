@@ -1,4 +1,4 @@
-import { ReactEventHandler, useState } from "react";
+import { useState } from "react";
 import { dogPictures } from "../dog-pictures";
 import { useDogContext } from "../providers/dog-context";
 import { Dog } from "../types";
@@ -7,7 +7,7 @@ export const CreateDogForm = () =>
   // no props allowed
   {
     const { createDog } = useDogContext();
-    const [selectedImage, setSelectedImage] = useState(dogPictures.BlueHeeler);
+    const [selectedImage] = useState(dogPictures.BlueHeeler);
     const [newDog, setNewDog] = useState<Omit<Dog, "id">>({
       name: "",
       description: "",
@@ -15,11 +15,22 @@ export const CreateDogForm = () =>
       isFavorite: false,
     });
 
+    const defaultSelectedImage = dogPictures.BlueHeeler;
+
     const handleChange = (
       e: React.ChangeEvent<
         HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
       >
     ) => setNewDog({ ...newDog, [e.target.name]: e.target.value });
+
+    const resetForm = () => {
+      setNewDog({
+        name: "",
+        description: "",
+        image: defaultSelectedImage,
+        isFavorite: false,
+      });
+    };
 
     return (
       <form
@@ -28,6 +39,7 @@ export const CreateDogForm = () =>
         onSubmit={(e) => {
           e.preventDefault();
           createDog(newDog);
+          resetForm();
         }}
       >
         <h4>Create a New Dog</h4>
@@ -51,11 +63,10 @@ export const CreateDogForm = () =>
         ></textarea>
         <label htmlFor="picture">Select an Image</label>
         <select
-          
           value={newDog.image}
           name="image"
           id=""
-          onChange={(e) => {
+          onChange={() => {
             handleChange;
           }}
         >

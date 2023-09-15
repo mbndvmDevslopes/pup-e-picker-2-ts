@@ -4,50 +4,15 @@
       "name": "Jaqueline",
       "image": "../public/assets/dalmation.png",
       "description": "Kansas Cuban Cayman Executive connecting Luxurious Woman neutral",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 4
     },
     {
       "name": "Mary",
       "image": "../public/assets/cowardly.png",
       "description": "Cotton amongst West Roentgenium Kids",
-      "isFavorite": false,
-      "id": 14
-    },
-    {
-      "name": "Pansy",
-      "image": "../public/assets/corgi.png",
-      "description": "authorized grow oof orange arch skip coat Auto",
-      "isFavorite": false,
-      "id": 15
-    },
-    {
-      "name": "Alize",
-      "image": "../public/assets/corgi.png",
-      "description": "indigo Oklahoma telecast Rubber ick anenst lime",
       "isFavorite": true,
-      "id": 18
-    },
-    {
-      "name": "Lourdes",
-      "image": "../public/assets/cowardly.png",
-      "description": "Beauty Minivan hardship Van female Van female",
-      "isFavorite": false,
-      "id": 19
-    },
-    {
-      "name": "test",
-      "description": "test",
-      "image": "/public/assets/blue-heeler.png",
-      "isFavorite": false,
-      "id": 20
-    },
-    {
-      "name": "test",
-      "description": "test",
-      "image": "/public/assets/blue-heeler.png",
-      "isFavorite": false,
-      "id": 21
+      "id": 14
     },
     {
       "name": "test",
@@ -67,22 +32,15 @@
       "name": "blue tick dog",
       "description": "always has ticks",
       "image": "/public/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 24
     },
     {
       "name": "td",
       "description": "ted",
       "image": "/public/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 25
-    },
-    {
-      "name": "big dog",
-      "description": "he is a chihuahua",
-      "image": "/public/assets/blue-heeler.png",
-      "isFavorite": false,
-      "id": 26
     }
   ]
 }

@@ -1,6 +1,5 @@
-import { DogProvider, useDogContext } from '../providers/dog-context';
-import { DogCard } from './DogCard';
-import { Dog } from '../types';
+import { useDogContext } from "../providers/dog-context";
+import { DogCard } from "./DogCard";
 
 // Right now these dogs are constant, but in reality we should be getting these from our server
 // Todo: Refactor to get rid of props (THERE SHOULD BE NO PROPS DRILLING ON THIS COMPONENT)
@@ -16,18 +15,18 @@ export const Dogs = () =>
       <>
         {filteredDogs.map((doggie) => (
           <DogCard
-            dog={{ ...doggie}}
+            dog={{ ...doggie }}
             key={doggie.id}
             onTrashIconClick={() => {
               deleteDog(doggie.id);
             }}
             onHeartClick={() => {
-              updateDog(doggie.id, false)
+              updateDog(doggie.id, false);
               //update isFavorite to false
             }}
             onEmptyHeartClick={() => {
               //updateisFavorite to true
-              updateDog(doggie.id, true)
+              updateDog(doggie.id, true);
             }}
             isLoading={isLoading}
           />
