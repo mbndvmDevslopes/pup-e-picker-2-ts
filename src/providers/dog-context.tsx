@@ -29,9 +29,9 @@ type TDogProvider = {
   setAllDogs: Dispatch<SetStateAction<Dog[]>>;
   activeTab: ActiveTab;
   setActiveTab: Dispatch<SetStateAction<ActiveTab>>;
-  createDog: (dog: Omit<Dog, "id">) => void;
+  createDog: (dog: Omit<Dog, "id">) => Promise<unknown>;
 };
-const DogContext = createContext<TDogProvider>({} as TDogProvider);
+export const DogContext = createContext<TDogProvider>({} as TDogProvider);
 
 export const DogProvider = ({ children }: { children: ReactNode }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -95,12 +95,12 @@ export const DogProvider = ({ children }: { children: ReactNode }) => {
   };
   const createDog = (dog: Omit<Dog, "id">) => {
     setIsLoading(true);
-    Requests.postDog(dog)
+    return Requests.postDog(dog)
       .then(() => {
         toast.success("A dog is created");
         refetchData().catch(() => toast.error("Error creating dog"));
       })
-      .catch((error) => console.log("Error creating dog", error))
+
       .finally(() => setIsLoading(false));
   };
 
@@ -124,17 +124,5 @@ export const DogProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 export const useDogContext = () => {
-  const context = useContext(DogContext);
-  return {
-    filteredDogs: context.filteredDogs,
-    activeTab: context.activeTab,
-    setActiveTab: context.setActiveTab,
-    allDogs: context.allDogs,
-    setAllDogs: context.setAllDogs,
-    updateDog: context.updateDog,
-    deleteDog: context.deleteDog,
-    setIsLoading: context.setIsLoading,
-    isLoading: context.isLoading,
-    createDog: context.createDog,
-  };
+ return useContext(DogContext);
 };

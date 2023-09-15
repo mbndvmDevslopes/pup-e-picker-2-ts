@@ -19,21 +19,7 @@
       "description": "",
       "image": "/public/assets/blue-heeler.png",
       "isFavorite": true,
-      "id": 22
-    },
-    {
-      "name": "test",
-      "description": "",
-      "image": "/public/assets/blue-heeler.png",
-      "isFavorite": true,
       "id": 23
-    },
-    {
-      "name": "blue tick dog",
-      "description": "always has ticks",
-      "image": "/public/assets/blue-heeler.png",
-      "isFavorite": true,
-      "id": 24
     },
     {
       "name": "td",
@@ -41,6 +27,13 @@
       "image": "/public/assets/blue-heeler.png",
       "isFavorite": true,
       "id": 25
+    },
+    {
+      "name": "test",
+      "description": "test",
+      "image": "/public/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 26
     }
   ]
 }

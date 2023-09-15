@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { dogPictures } from "../dog-pictures";
 import { useDogContext } from "../providers/dog-context";
+import  Toast, { toast } from "react-hot-toast";
 import { Dog } from "../types";
 
 export const CreateDogForm = () =>
@@ -38,8 +39,10 @@ export const CreateDogForm = () =>
         id="create-dog-form"
         onSubmit={(e) => {
           e.preventDefault();
-          createDog(newDog);
-          resetForm();
+          createDog(newDog)
+          .then(()=> resetForm())
+          .catch(() => toast.error('There was an error creating dog'))
+          
         }}
       >
         <h4>Create a New Dog</h4>
