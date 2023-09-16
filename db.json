@@ -18,22 +18,29 @@
       "name": "test",
       "description": "",
       "image": "/public/assets/blue-heeler.png",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 23
     },
     {
       "name": "td",
       "description": "ted",
       "image": "/public/assets/blue-heeler.png",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 25
     },
     {
       "name": "test",
       "description": "test",
       "image": "/public/assets/blue-heeler.png",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 26
+    },
+    {
+      "name": "ttt",
+      "description": "teee",
+      "image": "/public/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 27
     }
   ]
 }

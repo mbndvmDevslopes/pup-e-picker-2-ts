@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { useDogContext } from "../providers/dog-context";
+import { useDogContext } from '../providers/useDogContext';
 import { Dog } from "../types";
 
 export const Section = ({

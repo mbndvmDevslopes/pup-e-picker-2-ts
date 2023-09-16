@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { dogPictures } from "../dog-pictures";
-import { useDogContext } from "../providers/dog-context";
-import  Toast, { toast } from "react-hot-toast";
+import { toast } from 'react-hot-toast';
 import { Dog } from "../types";
+import { useDogContext } from '../providers/useDogContext';
 
 export const CreateDogForm = () =>
   // no props allowed

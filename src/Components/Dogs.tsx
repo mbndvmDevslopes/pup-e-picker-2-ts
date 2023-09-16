@@ -1,5 +1,5 @@
-import { useDogContext } from "../providers/dog-context";
-import { DogCard } from "./DogCard";
+import { useDogContext } from '../providers/useDogContext';
+import { DogCard } from './DogCard';
 
 // Right now these dogs are constant, but in reality we should be getting these from our server
 // Todo: Refactor to get rid of props (THERE SHOULD BE NO PROPS DRILLING ON THIS COMPONENT)
